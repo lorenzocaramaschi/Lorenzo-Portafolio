@@ -21,12 +21,14 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  padding: 4rem 0;
+  padding: 4rem 1rem; /* Adjusted padding for smaller screens */
 }
 
 .header-box {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* Stack vertically on small screens */
+  justify-content: center;
+  align-items: center; /* Centered on small screens */
 }
 
 .intro-texts {
@@ -37,7 +39,7 @@ body {
 }
 
 .intro-texts h1 {
-  font-size: 4rem;
+  font-size: 3rem; /* Adjusted for smaller screens */
 }
 
 .work-btn {
@@ -51,70 +53,118 @@ body {
 
 .client-box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Stack vertically on small screens */
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   padding: 2rem;
   margin: 1rem;
 }
 
 .client-box iframe {
+  width: 100%; /* Full width on small screens */
+  max-width: 560px; /* Keep max width */
+  box-shadow: 0px 4px 10px 2px purple;
+}
+
+.header-box iframe {
+  width: 100%; /* Full width on small screens */
+  max-width: 560px; /* Keep max width */
   box-shadow: 0px 4px 10px 2px purple;
 }
 
 .client-data {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 100%; /* Full width on small screens */
+  align-items: center; /* Centered */
 }
 
 .client-data h2 {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Adjusted for smaller screens */
 }
 
 .client-data p {
   background-color: purple;
   padding: 1rem;
   border-radius: 1rem;
+  text-align: center; /* Centered */
 }
 
 footer {
   margin-top: auto;
-  color: white; 
-  text-align: center; 
-  padding: 20px; 
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-footer div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-footer div .work-with-me{
-    font-weight: bold;
-    font-size: 4rem;
+footer div .work-with-me {
+  font-weight: bold;
+  font-size: 3rem; /* Adjusted for smaller screens */
 }
 
-.socials a i{
-    font-size: 5rem;
-    padding: 1rem;
+.socials {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  justify-content: center; /* Centered */
 }
 
-.socials{
-    display: flex;
-    flex-direction: row;
-    padding: 2rem;
-    justify-content: space-between;
+.socials a i {
+  font-size: 4rem; /* Adjusted for smaller screens */
+  padding: 1rem;
 }
 
-.testimonial p{
-    text-align: center;
-    background-color: purple;
-    font-weight: bold;
-    font-style: italic;
-    padding: 5rem;
-    font-size: 2rem;
+.testimonial p {
+  text-align: center;
+  background-color: purple;
+  font-weight: bold;
+  font-style: italic;
+  padding: 3rem; /* Adjusted for smaller screens */
+  font-size: 1.5rem; /* Adjusted for smaller screens */
 }
 
+/* Media Queries for Responsiveness */
+@media (min-width: 1280px) {
+  .header-box {
+    flex-direction: row; /* Row layout for larger screens */
+    justify-content: space-around; /* Space between items */
+  }
+
+  .client-box {
+    flex-direction: row; /* Row layout for larger screens */
+    justify-content: space-around; /* Space between items */
+  }
+
+  .client-data {
+    width: 30%; /* Set width for larger screens */
+  }
+
+  .intro-texts h1 {
+    font-size: 4rem; /* Larger font size for headers */
+  }
+
+  .client-data h2 {
+    font-size: 2rem; /* Larger font size for client names */
+  }
+
+  footer div .work-with-me {
+    font-size: 4rem; /* Larger font size for footer */
+  }
+
+  .testimonial p {
+    font-size: 2rem; /* Larger font size for testimonials */
+  }
+}
+
+@media (max-width: 320px) { 
+    .client-data h2 {
+        font-size: 1.5rem; /* Larger font size for client names */
+      }
+}
